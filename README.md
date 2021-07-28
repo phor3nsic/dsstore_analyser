@@ -38,3 +38,20 @@ http://example3.com/.DS_Store
 ➜ python3 dsstore.py -f /tmp/.DS_Store
 
 ```
+
+## Example output
+
+```
+> http://example:80/.DS_Store
+
+[+] .DS_Store
+[+] .git
+[+] 404.php
+[+] cgi-bin
+[+] css
+[+] fonts
+[+] images
+[+] index.php
+[+] test.php
+[+] test.php.bak
+```
