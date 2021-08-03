@@ -1,8 +1,12 @@
 from ds_store import DSStore
+
 import argparse
 import requests
 import os
 import sys
+
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 def read_file(file):
 	dsstore = DSStore.open(file, 'r+')
@@ -22,7 +26,7 @@ def download(url):
 	name = "/tmp/"+name
 
 	try:
-		r = requests.get(url)
+		r = requests.get(url, verify=False)
 		if r.status_code == 200:
 			try:
 				open(name,"wb").write(r.content)
